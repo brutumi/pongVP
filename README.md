@@ -27,11 +27,10 @@
 
 #### Ограничување на палките, за да не се движат надвор од прозорецот.
 
-*Го ограничуваме од доле така што ја споредува локацијата на долниот крај на формата :* `PongWorldInfo.bottomOfWorld` *, со новата локација :* `paddle.Location.Y + speed` *, и го бара минимумот од нив така што ако пробаме да одиме подоле нема да дозволи и ќе ја одбере крајната локација на формата :* `PongWorldInfo.bottomOfWorld`
+*Го ограничуваме од доле така што ја споредува локацијата на долниот крај на формата :* `PongWorldInfo.bottomOfWorld` *, со новата локација :* `paddle.Location.Y + speed` *, и го бара минимумот од нив така што ако пробаме да одиме подоле нема да дозволи и ќе ја одбере крајната локација на формата :* `PongWorldInfo.bottomOfWorld`*, потоа ограничување од горната страна со треба да ја споредуваме најгорната позиција на формата :* `PongWorldInfo.topOfWorld`*чија вредност и 0, со новата позиција (која веќе е проверена и ограничена од доле) :* `Math.Min(PongWorldInfo.bottomOfWorld - paddle.Height
+, paddle.Location.Y + speed)`
 
-*Ограничување од горната страна со* `Math.Max(PongWorldInfo.topOfWorld, Math.Min(PongWorldInfo.bottomOfWorld - paddle.Height, paddle.Location.Y + speed)))`
-
-
+Целосната локација
 ```
             paddle.Location = new Point(paddle.Location.X,
                     Math.Max(PongWorldInfo.topOfWorld,
