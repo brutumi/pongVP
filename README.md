@@ -218,4 +218,6 @@ private void CheckKeys(KeyEventArgs e, bool isDown) {
 ```
 
 ## Screenshots
-![Screenshot](sc1.png)
+![Screenshot1](sc1.png)
+![Screenshot2](sc2.png)
+![Screenshot3](sc3.png)
