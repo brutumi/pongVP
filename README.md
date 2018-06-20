@@ -25,4 +25,19 @@
 
 `Player` класата го чува резултатот за играчот, палката како PictureBox, брзината и неколку помошни променливи.
 
-#### Функционалности во оваа класа
+##### Функционалности во оваа класа
+Ограничување на палките, за да не се движат надвор од прозорецот.
+
+*Го ограничување од доле така што ја споредува локацијата на долниот крај на формата* `PongWorldInfo.bottomOfWorld` *со новата локација* `paddle.Location.Y + speed` *и го бара минимумот од нив така што ако пробаме да одиме подоле ќе ја одбере крајната дозволена локација од формата :* `PongWorldInfo.bottomOfWorld`
+
+*Ограничување од горната страна со* `Math.Max(PongWorldInfo.topOfWorld, Math.Min(PongWorldInfo.bottomOfWorld - paddle.Height, paddle.Location.Y + speed)))`
+
+
+```
+            paddle.Location = new Point(paddle.Location.X,
+                    Math.Max(PongWorldInfo.topOfWorld,
+                        Math.Min(PongWorldInfo.bottomOfWorld - paddle.Height
+                        , paddle.Location.Y + speed)
+                        )
+                    );
+```
