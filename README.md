@@ -155,7 +155,6 @@ private void DoMove(bool? goingUp) {
                 while(leftsidePlayer.paddle.Bounds.IntersectsWith(ballPictureBox.Bounds)
                     || rightsidePlayer.paddle.Bounds.IntersectsWith(ballPictureBox.Bounds)) {
                     DoMove();
-
                 }
 ```
 
